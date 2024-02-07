@@ -18,7 +18,7 @@ async function main() {
 
     /** Groups */
 
-    // create a group with id 1, treeDepth 16 and the members above
+    // create a group with the members above
     const group = new Group(members)
 
     /** Proofs */
