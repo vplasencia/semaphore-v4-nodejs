@@ -23,16 +23,16 @@ async function main() {
 
     /** Proofs */
 
-    // external nullifier to prevent double signaling
-    const externalNullifier = group.root!
+    // scope to prevent double signaling
+    const scope = group.root!
 
-    const signal = 1
+    const message = 1
 
     // generate the proof
-    const fullProof: SemaphoreProof = await generateProof(new Identity("1"), group, signal, externalNullifier)
+    const proof: SemaphoreProof = await generateProof(new Identity("1"), group, message, scope)
 
     // verify the proof
-    const verified: boolean = await verifyProof(fullProof)
+    const verified: boolean = await verifyProof(proof)
 
     console.log("Proof verified: ", verified)
 }
