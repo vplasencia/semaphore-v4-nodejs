@@ -1,6 +1,4 @@
-import { Group, BigNumberish } from "@semaphore-protocol/group"
-import { Identity } from "@semaphore-protocol/identity"
-import { generateProof, SemaphoreProof, verifyProof } from "@semaphore-protocol/proof"
+import { Identity, Group, generateProof, SemaphoreProof, verifyProof } from "@semaphore-protocol/core"
 
 async function main() {
     /** Identities */
@@ -12,7 +10,7 @@ async function main() {
      */
 
     // array of members to add to the group
-    const members: BigNumberish[] = Array.from({ length: 10 }, (_, i) => new Identity(i)).map(
+    const members: bigint[] = Array.from({ length: 10 }, (_, i) => new Identity(`${i}n`)).map(
         ({ commitment }) => commitment
     )
 
@@ -29,7 +27,7 @@ async function main() {
     const message = 1
 
     // generate the proof
-    const proof: SemaphoreProof = await generateProof(new Identity("1"), group, message, scope)
+    const proof: SemaphoreProof = await generateProof(new Identity("1n"), group, message, scope)
 
     // verify the proof
     const verified: boolean = await verifyProof(proof)

@@ -1,5 +1,4 @@
-import { Group, BigNumberish } from "@semaphore-protocol/group"
-import { Identity } from "@semaphore-protocol/identity"
+import { Identity, Group } from "@semaphore-protocol/core"
 
 /** Identities */
 
@@ -10,7 +9,9 @@ import { Identity } from "@semaphore-protocol/identity"
  */
 
 // array of members to add to the group
-const members: BigNumberish[] = Array.from({ length: 10 }, (_, i) => new Identity(i)).map(({ commitment }) => commitment)
+const members: bigint[] = Array.from({ length: 10 }, (_, i) => new Identity(`${i}n`)).map(
+    ({ commitment }) => commitment
+)
 
 /** Groups */
 

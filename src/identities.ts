@@ -1,4 +1,4 @@
-import { Identity } from "@semaphore-protocol/identity"
+import { Identity } from "@semaphore-protocol/core"
 
 /** Identities */
 
