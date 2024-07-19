@@ -16,12 +16,6 @@ git clone https://github.com/vplasencia/semaphore-nodejs.git
 yarn
 ```
 
-### Download the Semaphore snark artifacts
-
-```bash
-yarn download:snark-artifacts
-```
-
 ### Run the identities file
 
 ```bash
